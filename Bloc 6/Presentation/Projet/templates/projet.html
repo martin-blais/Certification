@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+		<style type="text/css">
+			<meta charset="utf-8">
+			<title>PicToSign</title>
+		
+			@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+			
+
+			body{
+			    margin: 0; padding: 0;
+			    font-family: 'Lato';
+
+			}
+
+			.inner{
+				width:80%;
+				margin: auto;
+			}
+
+
+			.menu{
+				background: #F44336;
+				width: 100%;
+				height: 66px;
+				line-height: 66px;
+			}
+
+
+			.m-left{
+				float: left;
+			}
+
+			.m-right{
+				float: right;
+			}
+
+			.titre{
+				margin: 0; padding:0; 
+				color: #fff;
+				font-family: 'Roboto';
+				font-weight: 900;
+				font-size: 35px
+			}
+
+			.link{
+				text-decoration: none;
+				color: #fff;
+				text-transform: uppercase;
+				font-weight: 700;
+				padding: 0; margin: 0 15px;
+				transition: all 0.3s ease-in-out;
+			}
+
+			.link:hover{
+				padding-bottom: 3px;
+				border-bottom: 2px solid #fff;
+			}
+			.link i{
+				margin-right: 5px;
+			}
+
+			h1{
+				color: #F44336;
+
+			}
+
+			.presentation{
+				font-size: 15pt
+			}
+
+			.box {
+  				display: grid;
+  				grid-template-columns: 1fr 1fr 1fr;
+  				grid-gap: 10px 2em;
+				font-size: 15pt}
+
+			.box :first-child {
+    			align-self: center;
+				}
+
+			
+		</style>
+	</head>	
+<body>
+	<header role="header">
+
+			<nav class="menu" role="navigation">
+				<div class="inner">
+					<div class = "m-left">
+						<h1 class="titre">PicToSign</h1>
+					</div>
+
+					<div class = "m-right">
+						<a href="/" class="link"><i class="fas fa-home"></i>Accueil</a>
+						<a href="/projet" class="link" ><i class="fas fa-rocket"></i>Le projet</a>
+						
+					</div>
+				</div>
+			</nav>
+
+		</header>
+
+		<div class="presentation_projet">
+			<h1 id = "introduction"><center>Apprends la langue des signes à l'aide de l'IA</center></h1>
+
+		</div>
+		<hr size="4" noshade="">
+		<hr size="4" noshade="">
+
+		<div class="presentation">
+			<h1 id="titre_1">Présentation du Projet</h1>
+			<p>
+				Dans cette partie tu vas pouvoir traduire ton image en langue des signes. Tu peux traduire 25 classes de mots ce qui représente 3 catégories:<br>
+			</p>
+		</div>
+
+		<div class="box">
+			<div id="i_objet">
+				<h2 class="objet">Objet</h2>
+					<p class="objet">Sac à dos 🎒</p>
+					<p class="objet">Jumelles 📷</p>
+					<p class="objet">Bouteille 🍾</p>
+					<p class="objet">Calculatrice 📟</p>
+					<p class="objet">Bougie 🕯</p>
+					<p class="objet">Canoe 🚣</p>
+					<p class="objet">Robe 👗</p>
+					<p class="objet">Guitare 🎸</p>
+					<p class="objet">Chapeau 🎩</p>
+					<p class="objet">Couteau 🔪</p>
+					<p class="objet">Tasse 🍺</p>
+					<p class="objet">Montre ⌚</p>
+			</div>
+
+
+			<div id="i_nourriture">
+				<h2 class="nourriture" >Nourriture</h2>
+					<p class="nourriture" >Pomme 🍎</p>
+					<p class="nourriture">Banane 🍌</p>
+					<p class="nourriture" >Pizza 🍕</p>
+					<p class="nourriture">Sandwich 🥪</p>
+					<p class="nourriture">Fleur 🌻</p>
+			</div>
+
+			<div id="i_animal">
+				<h2 class="animal">Animal</h2>
+					<p class="animal">Ours 🐻</p>
+					<p class="animal">Chat 🐈</p>
+					<p class="animal">Chien 🐕</p>
+					<p class="animal">Elephant 🐘</p>
+					<p class="animal">Chèvre 🐐</p>
+					<p class="animal">Singe 🐒</p>
+					<p class="animal">Tortue 🐢</p>
+					<p class="animal">Zèbre 🦓</p>
+			</div>
+		</div>
+
+		<div class="image">
+			<h1>Image à traduire</h1>
+			<form method="post" enctype="multipart/form-data" action="{{url_for('upload_predict')}}">
+				<label for="image"> Choisir une image</label >
+	    		<input type="file" name="image">
+	    		<input type="submit" value="Traduction" class="button"> 
+	    		<p>{{ erreur }}</p>
+			</form>
+		</div>
+
+	
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+	<style>
+
+		<meta charset="utf-8">
+		<title>PicToSign</title>
+	
+		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+		
+
+		body{
+		    margin: 0; padding: 0;
+		    font-family: 'Lato';
+		}
+
+		.inner{
+			width:80%;
+			margin: auto;
+		}
+
+
+		.menu{
+			background: #F44336;
+			width: 100%;
+			height: 66px;
+			line-height: 66px;
+		}
+
+
+		.m-left{
+			float: left;
+		}
+
+		.m-right{
+			float: right;
+		}
+
+		.titre{
+			margin: 0; padding:0; 
+			color: #fff;
+			font-family: 'Roboto';
+			font-weight: 900;
+			font-size: 35px
+		}
+
+		.link{
+			text-decoration: none;
+			color: #fff;
+			text-transform: uppercase;
+			font-weight: 700;
+			padding: 0; margin: 0 15px;
+			transition: all 0.3s ease-in-out;
+		}
+
+		.link:hover{
+			padding-bottom: 3px;
+			border-bottom: 2px solid #fff;
+		}
+		.link i{
+			margin-right: 5px;}
+
+		.Photo { width: 300px;
+			   height: 300px}
+		.Alphabet{ width: 50px;
+			       height: 50px;
+			   text-indent: -10000px
+			}
+		.box {
+  				display: grid;
+  				grid-template-columns: 1fr 1fr 1fr;
+  				grid-gap: 10px 2em;
+				font-size: 15pt}
+
+		.box :first-child {
+			align-self: center;
+			}
+
+
+	</style>
+</head>
+<html>
+<body>
+	<header role="header">
+
+		<nav class="menu" role="navigation">
+			<div class="inner">
+				<div class = "m-left">
+					<h1 class="titre">PicToSign</h1>
+				</div>
+
+				<div class = "m-right">
+					<a href="/" class="link"><i class="fas fa-home"></i>Accueil</a>
+					<a href="/projet" class="link" ><i class="fas fa-rocket"></i>Le projet</a>
+					
+				</div>
+			</div>
+		</nav>
+
+	</header>
+	<div class="box">
+		<div>		
+			<h3>Image à predire</h3>
+			<img src="{{ href }}" class = "Photo"/>	
+		</div>
+		<div>
+			<h3>La prediction est : {{prediction}} </h3>
+			<video width="300" height="300" autoplay controls>
+	    		<source src="{{ href_video }}" type="video/mp4"/>
+	    	</video>
+		</div>
+
+		<div class="alphabet">
+			<h3>En langue des signes, {{prediction}} s'écrit :</h3>
+			<img src="static/Alphabet/{{ lettre_0 }}.jpg" class = "Alphabet" alt="" />
+			<img src="static/Alphabet/{{ lettre_1 }}.jpg" class = "Alphabet" alt="" />
+			<img src="static/Alphabet/{{ lettre_2 }}.jpg" class = "Alphabet" alt="" />
+			<img src="static/Alphabet/{{ lettre_3 }}.jpg" class = "Alphabet" alt="" />
+			<img src="static/Alphabet/{{ lettre_4 }}.jpg" class = "Alphabet" alt="" />
+			<img src="static/Alphabet/{{ lettre_5 }}.jpg" class = "Alphabet" alt="" />
+			<img src="static/Alphabet/{{ lettre_6 }}.jpg" class = "Alphabet" alt="" />
+			<img src="static/Alphabet/{{ lettre_7 }}.jpg" class = "Alphabet" alt="" />
+			<img src="static/Alphabet/{{ lettre_8 }}.jpg" class = "Alphabet" alt="" />
+			<img src="static/Alphabet/{{ lettre_9 }}.jpg" class = "Alphabet" alt="" />
+			<img src="static/Alphabet/{{ lettre_10 }}.jpg" class = "Alphabet" alt="" />
+			<img src="static/Alphabet/{{ lettre_11 }}.jpg" class = "Alphabet" alt="" />
+		</div>
+		
+
+	</div>
+</body>
+</html>
+
